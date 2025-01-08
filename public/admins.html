@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Películas</title>
+    <link rel="stylesheet" href="admins.css">
+</head>
+<body>
+
+    <header>
+        <h1>Administrar Películas</h1>
+    </header>
+
+    <main>
+        <form id="movieForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="year">Año:</label>
+            <input type="number" id="year" name="year" required>
+
+            <label for="cover">Portada (URL de la imagen):</label>
+            <input type="url" id="cover" name="cover" required>
+
+            <label for="movie">Película (URL del video):</label>
+            <input type="url" id="movie" name="movie" required>
+
+            <button type="submit">Agregar Película</button>
+        </form>
+    </main>
+
+    <script src="admins.js"></script>
+</body>
+</html>

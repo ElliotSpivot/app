@@ -1,0 +1,177 @@
+/* Estilo global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: url('https://image.tmdb.org/t/p/original/cSqUkhWH5seTIwtqUUAEBFjiLyh.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(3px); /* Ajustar el desenfoque */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Cabecera y navegación */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Separar centro e icono */
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Centrar las opciones */
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center; /* Centrar el icono y el texto */
+}
+
+.nav-links a:hover {
+    color: #ff0000; /* Cambiar el color del icono al pasar el cursor */
+    ; /* Cambiar el color del texto al pasar el cursor */
+}
+
+.nav-links a i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 1.4rem; /* Ajustar tamaño del icono */
+}
+
+/* Cambiar color del icono al pasar el cursor sobre el enlace */
+.nav-links a:hover i {
+    color: #ff0000; /* Cambiar el color del icono al pasar el cursor */
+}
+
+/* Icono de búsqueda */
+.search-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 30px; /* Icono a la derecha */
+}
+
+.search-icon i {
+    color: #fff;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+    position: absolute; /* Hacerlo absoluto dentro de header */
+    left: 30px; /* Colocarlo en la parte izquierda */
+    top: 10px;
+}
+
+/* Menú hamburguesa cuando el menú está abierto */
+.menu-toggle.open {
+    display: block;
+}
+
+.menu-toggle i {
+    color: #fff;
+}
+
+/* Icono de hamburguesa */
+.menu-toggle .fa-bars {
+    display: block; /* Mostrar el icono de hamburguesa */
+}
+
+/* Icono de X */
+.menu-toggle .fa-times {
+    display: none; /* Ocultar el icono de X por defecto */
+    color: #ff0000; /* Rojo brillante para la X */
+    font-size: 2rem; /* Tamaño más grande para la X */
+}
+
+/* Cuando el menú está activo, mostrar el icono de X */
+.menu-toggle.open .fa-bars {
+    display: none; /* Ocultar el icono de hamburguesa */
+}
+
+.menu-toggle.open .fa-times {
+    display: block; /* Mostrar el icono de X */
+}
+
+/* Contenido principal */
+main .content {
+    text-align: center;
+    margin-top: 120px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    /* Menú hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-center {
+        display: none; /* Ocultar el centro para pantallas pequeñas */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed; /* Fijar el menú en la parte izquierda */
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+        height: 100%; /* Ocupar toda la altura */
+        padding: 20px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 20px 0;
+        font-size: 1.5rem; /* Aumentar tamaño para mejor visibilidad */
+    }
+
+    /* Alinear el contenido principal después de que se active el menú */
+    main .content {
+        margin-top: 20px;
+    }
+}
